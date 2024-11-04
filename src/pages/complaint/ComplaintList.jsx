@@ -128,7 +128,15 @@ export default function ComplaintList() {
                   <td className="border border-gray-300 px-4 py-2">{complaint.title}</td>
                   <td className="border border-gray-300 px-4 py-2">{complaint.user.name}</td>
                   <td className="border border-gray-300 px-4 py-2">{complaint.category.name}</td>
-                  <td className="border border-gray-300 px-4 py-2">{complaint.priority}</td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    <span className={`inline-block px-2 py-1 text-sm font-medium rounded-full ${
+                    complaint.priority === 'High' ? 'bg-red-100 text-red-700' : 
+                    complaint.priority === 'Medium' ? 'bg-yellow-100 text-yellow-700' : 
+                    'bg-green-100 text-green-700'
+                    }`}>
+                    {complaint.priority}
+                  </span>
+                  </td>
                   <td className="border border-gray-300 px-4 py-2">{complaint.status}</td>
                   <td className="border border-gray-300 px-4 py-2">
                     <img src={`${import.meta.env.VITE_REACT_APP_API_BASE_URL}/storage/${complaint.attachment}`} alt="" className="h-10 w-24" />

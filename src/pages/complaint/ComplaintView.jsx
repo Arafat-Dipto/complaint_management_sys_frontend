@@ -68,8 +68,8 @@ const ComplaintViewPage = () => {
           <div className="mb-4">
             <span className="text-sm font-medium text-gray-500">Priority: </span>
             <span className={`inline-block px-2 py-1 text-sm font-medium rounded-full ${
-              complaintData.priority?.name === 'High' ? 'bg-red-100 text-red-700' : 
-              complaintData.priority?.name === 'Medium' ? 'bg-yellow-100 text-yellow-700' : 
+              complaintData.priority === 'High' ? 'bg-red-100 text-red-700' : 
+              complaintData.priority === 'Medium' ? 'bg-yellow-100 text-yellow-700' : 
               'bg-green-100 text-green-700'
             }`}>
               {complaintData.priority || "No priority available"}
